@@ -42,4 +42,20 @@ readFileAsyncWithPromises.
 
 Which I find very ugly
 
-There is also a `$q.defer()`, which works the way you'd expect it to work (if you've used Q-esque libraries)
+There is also a `$q.defer()`, which works the way you'd expect it to work (if you've used Q-esque libraries):
+
+```
+const deferred = $q.defer();
+
+fs.readFile('./sample.txt', function (err, data) {
+  if (err) {
+    deferred.reject(err);
+  } else {
+    deferred.resolve(data);
+  }
+});
+
+deferred.promise.
+  then(...).
+  catch(...);
+```
