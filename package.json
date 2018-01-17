@@ -1,6 +1,6 @@
 {
   "name": "kchoo-q",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "A wrapper around ES6 Promises, with a Q-based API",
   "main": "q.js",
   "scripts": {
