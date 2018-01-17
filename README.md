@@ -8,7 +8,6 @@ A wrapper around ES6 `Promise`s, based on https://github.com/kriskowal/q
 
 ```
 const fs = require('fs');
-// NOTE: not actually on npm yet
 const $q = require('kchoo-q');
 
 const readFileAsyncWithPromises = $q.promisify(fs.readFile, fs);
