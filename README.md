@@ -3,6 +3,12 @@
 A wrapper around ES6 `Promise`s, based on https://github.com/kriskowal/q
 
 
+## Installation
+
+```
+$ npm install kchoo-q
+```
+
 
 ## Usage:
 
@@ -38,8 +44,6 @@ readFileAsyncWithPromises.
   then(...).
   catch(...);
 ```
-
-Which I find very ugly
 
 There is also a `$q.defer()`, which works the way you'd expect it to work (if you've used Q-esque libraries):
 
