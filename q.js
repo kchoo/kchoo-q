@@ -21,16 +21,20 @@ function promisify(fn, context) {
 
 		args = args.filter(el => el !== undefined);
 
-		fn.apply(
-			context,
-			args.concat(function (err, data) {
-				if(err) {
-					return deferred.reject(err);
-				}
+		try {
+			fn.apply(
+				context,
+				args.concat(function (err, data) {
+					if(err) {
+						return deferred.reject(err);
+					}
 
-				deferred.resolve(data);
-			})
-		);
+					deferred.resolve(data);
+				})
+			);
+		} catch (e) {
+			deferred.reject(e);
+		}
 
 		return deferred.promise;
 	};
